@@ -1,0 +1,128 @@
+/* Reset de base */
+body, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Conteneur principal */
+section {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image principale */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Titre */
+h4 {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+/* Réseaux sociaux */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+ul li a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+ul li a img:hover {
+    transform: scale(1.1);
+}
+
+/* Texte */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+#media-player {
+    background-position: center;
+    background-size: cover; height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+}
+
+
+h2,h3 {
+    margin-top: 0;
+}
+
+/* adding styles for the track images */
+.track-image {
+    max-width: 90%;
+    height: 170px;
+    margin-top: 5px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    outline: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.controls button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+    height: 35px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 22px;
+    transition: 0,3s;
+}
+
+.controls button:hover {
+    background-color: #4caf50;
+}
+
+.download-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+    height: 35px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 22px;
+    transition: 0,3s;
+}
+
+.download-button:hover {
+    background-color: #005f73;
+}
