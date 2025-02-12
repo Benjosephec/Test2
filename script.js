@@ -6,8 +6,3 @@ function changeContent(page) {
     };
     document.getElementById("media-player").innerHTML = content[page];
 }
-
-
-// Initial track name update
-updateTrackName();    
-
