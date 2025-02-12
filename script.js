@@ -6,7 +6,6 @@ function changeContent(page) {
                         <img src="#" alt="trackimages" class="track-image" id="trackImage">
                         <h3 id="trackName"></h3>
                         <audio id="audioPlayer" controls>
-                            <source src="media/War2/Nitro.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <div class="controls">
@@ -17,18 +16,94 @@ function changeContent(page) {
                         </div>
                     </div>
                 </section>`,
-        page2: "<p>Voici le contenu de la Page 2</p>",
-        page3: "<p>Et maintenant, le contenu de la Page 3</p>"
+        page2: `<section id="media-player">
+                    <div class="music-player-body">
+                        <h2>MUSIC PLAYER</h2>
+                        <img src="#" alt="trackimages" class="track-image" id="trackImage">
+                        <h3 id="trackName"></h3>
+                        <audio id="audioPlayer" controls>
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="controls">
+                            <button class="prev-button" id="prevButton">&#9665;</button>
+                            <button class="play-pause-button" id="playPauseButton">&#9658;</button> 
+                            <button class="next-button" id="nextButton">&#9655;</button>
+                            <button class="download-button" id="downloadButton">⬇</button>
+                        </div>
+                    </div>
+                </section>`,
+        page3: `<section id="media-player">
+                    <div class="music-player-body">
+                        <h2>MUSIC PLAYER</h2>
+                        <img src="#" alt="trackimages" class="track-image" id="trackImage">
+                        <h3 id="trackName"></h3>
+                        <audio id="audioPlayer" controls>
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="controls">
+                            <button class="prev-button" id="prevButton">&#9665;</button>
+                            <button class="play-pause-button" id="playPauseButton">&#9658;</button> 
+                            <button class="next-button" id="nextButton">&#9655;</button>
+                            <button class="download-button" id="downloadButton">⬇</button>
+                        </div>
+                    </div>
+                </section>`
     };
 
     document.getElementById("media-player").innerHTML = content[page];
 
+    // Associer les bons fichiers audio selon la page
+    let audioFiles = [];
     if (page === "page1") {
-        setupMediaPlayer(); // Réattacher les événements après le changement de contenu
+        audioFiles = [
+            { name: 'After Dark', src: 'media/Never Apologize/After_Dark.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Against the rope', src: 'media/Never Apologize/Against the rope.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'All Day', src: 'media/Never Apologize/All Day.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Blessings', src: 'media/Never Apologize/BLESSINGS.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Call Up The Troops', src: 'media/Never Apologize/Call Up The Troops.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Count My Guap', src: 'media/Never Apologize/Count My Guap.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Go Off', src: 'media/Never Apologize/Go Off.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'New York', src: 'media/Never Apologize/New York.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Nightlife', src: 'media/Never Apologize/Nightlife.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Pockets Loaded', src: 'media/Never Apologize/Pockets Loaded.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Right Now', src: 'media/Never Apologize/Right Now.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Rolling', src: 'media/Never Apologize/Rolling.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Say It', src: 'media/Never Apologize/Say It.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'See Me Shine', src: 'media/Never Apologize/See Me Shine.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Walking Thru Hell', src: 'media/Never Apologize/Walking Thru Hell.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
+            { name: 'Woke Up', src: 'media/Never Apologize/Woke Up.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' }            
+        ];
+    } else if (page === "page2") {
+        audioFiles = 
+        [
+            { name: 'Business', src: 'media/War2/Business.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Cross Me', src: 'media/War2/Cross Me.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Drifttn Off', src: 'media/War2/Drifttn Off.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Grande', src: 'media/War2/Grande.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Lights', src: 'media/War2/Lights.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Nitro', src: 'media/War2/Nitro.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'No Rush', src: 'media/War2/No Rush.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Outer Space', src: 'media/War2/Outer Space.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Outta Here', src: 'media/War2/Outta Here.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Popping Tags', src: 'media/War2/Popping Tags.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Redeye', src: 'media/War2/Redeye.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Road Rage', src: 'media/War2/Road Rage.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Safe', src: 'media/War2/SAFE.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Stay Dangerous', src: 'media/War2/Stay Dangerous.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Tonystark', src: 'media/War2/Tonystark.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
+            { name: 'Wishes', src: 'media/War2/Wishes.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' }
+        ]
+    } else if (page === "page3") {
+        audioFiles = [
+            { name: 'Simon est gay', src: 'media/War2/SongX.mp3', image: 'media/img5.png' },
+            { name: 'Song Y', src: 'media/War2/SongY.mp3', image: 'media/img6.png' }
+        ];
     }
+
+    setupMediaPlayer(audioFiles);
 }
 
-function setupMediaPlayer() {
+function setupMediaPlayer(audioFiles) {
     const audioPlayer = document.getElementById('audioPlayer');
     const playPauseButton = document.getElementById('playPauseButton');
     const nextButton = document.getElementById('nextButton');
@@ -37,12 +112,10 @@ function setupMediaPlayer() {
     const trackImageElement = document.getElementById('trackImage');
     const downloadButton = document.getElementById('downloadButton');
 
-    const audioFiles = [
-        { name: 'Nitro', src: 'media/War2/Nitro.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
-        { name: 'Business', src: 'media/War2/Business.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
-        { name: 'Cross Me', src: 'media/War2/Cross Me.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
-        { name: 'Outta Here', src: 'media/War2/Outta Here.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' }
-    ];
+    if (!audioFiles || audioFiles.length === 0) {
+        console.error("Aucun fichier audio trouvé !");
+        return;
+    }
 
     let currentTrack = 0;
     let isPlaying = false;
@@ -89,6 +162,3 @@ function setupMediaPlayer() {
 
     updateTrack();
 }
-
-
-
