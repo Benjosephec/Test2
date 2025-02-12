@@ -65,7 +65,7 @@ p {
 #media-player {
     background-position: center;
     background-size: cover; 
-    height: 35vh;
+    height: 55vh;
     display: flex;
     align-items: center;
     justify-content: center;
