@@ -1,57 +1,4 @@
 function changeContent(page) {
-    let content = {
-        page1: `<section id="media-player">
-                    <div class="music-player-body">
-                        <h2>MUSIC PLAYER</h2>
-                        <img src="#" alt="trackimages" class="track-image" id="trackImage">
-                        <h3 id="trackName"></h3>
-                        <audio id="audioPlayer" controls>
-                            Your browser does not support the audio element.
-                        </audio>
-                        <div class="controls">
-                            <button class="prev-button" id="prevButton">&#9665;</button>
-                            <button class="play-pause-button" id="playPauseButton">&#9658;</button> 
-                            <button class="next-button" id="nextButton">&#9655;</button>
-                            <button class="download-button" id="downloadButton">⬇</button>
-                        </div>
-                    </div>
-                </section>`,
-        page2: `<section id="media-player">
-                    <div class="music-player-body">
-                        <h2>MUSIC PLAYER</h2>
-                        <img src="#" alt="trackimages" class="track-image" id="trackImage">
-                        <h3 id="trackName"></h3>
-                        <audio id="audioPlayer" controls>
-                            Your browser does not support the audio element.
-                        </audio>
-                        <div class="controls">
-                            <button class="prev-button" id="prevButton">&#9665;</button>
-                            <button class="play-pause-button" id="playPauseButton">&#9658;</button> 
-                            <button class="next-button" id="nextButton">&#9655;</button>
-                            <button class="download-button" id="downloadButton">⬇</button>
-                        </div>
-                    </div>
-                </section>`,
-        page3: `<section id="media-player">
-                    <div class="music-player-body">
-                        <h2>MUSIC PLAYER</h2>
-                        <img src="#" alt="trackimages" class="track-image" id="trackImage">
-                        <h3 id="trackName"></h3>
-                        <audio id="audioPlayer" controls>
-                            Your browser does not support the audio element.
-                        </audio>
-                        <div class="controls">
-                            <button class="prev-button" id="prevButton">&#9665;</button>
-                            <button class="play-pause-button" id="playPauseButton">&#9658;</button> 
-                            <button class="next-button" id="nextButton">&#9655;</button>
-                            <button class="download-button" id="downloadButton">⬇</button>
-                        </div>
-                    </div>
-                </section>`
-    };
-
-    document.getElementById("media-player").innerHTML = content[page];
-
     // Associer les bons fichiers audio selon la page
     let audioFiles = [];
     if (page === "page1") {
@@ -73,6 +20,7 @@ function changeContent(page) {
             { name: 'Walking Thru Hell', src: 'media/Never Apologize/Walking Thru Hell.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' },
             { name: 'Woke Up', src: 'media/Never Apologize/Woke Up.mp3', image: 'media/never-apologize-album-v0-2jh94tenhimb1.jpg' }            
         ];
+        document.getElementById("TitleMedia").innerText = "Never Apologize";
     } else if (page === "page2") {
         audioFiles = 
         [
@@ -93,11 +41,13 @@ function changeContent(page) {
             { name: 'Tonystark', src: 'media/War2/Tonystark.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' },
             { name: 'Wishes', src: 'media/War2/Wishes.mp3', image: 'media/concept-covers-for-yalls-local-files-i-didnt-know-which-one-v0-duvvft5enkmc1.png' }
         ]
+        document.getElementById("TitleMedia").innerText = "War2";
     } else if (page === "page3") {
         audioFiles = [
             { name: 'Simon est gay', src: 'media/War2/SongX.mp3', image: 'media/img5.png' },
             { name: 'Song Y', src: 'media/War2/SongY.mp3', image: 'media/img6.png' }
         ];
+        document.getElementById("TitleMedia").innerText = "Never Apologize";
     }
 
     setupMediaPlayer(audioFiles);
