@@ -44,8 +44,6 @@ function changeContent(page) {
         document.getElementById("TitleMedia").innerText = "War2";
     } else if (page === "page3") {
         audioFiles = [
-            { name: 'Simon est gay', src: 'media/War2/SongX.mp3', image: 'media/img5.png' },
-            { name: 'Song Y', src: 'media/War2/SongY.mp3', image: 'media/img6.png' }
         ];
         document.getElementById("TitleMedia").innerText = "Never Apologize";
     }
